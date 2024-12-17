@@ -1,5 +1,3 @@
-@file:Suppress("ktlint:standard:filename")
-
 package easy
 
 /**
@@ -43,7 +41,7 @@ package easy
  * ### Follow-Up:
  * Can you come up with an algorithm that is faster than **O(n^2)** time complexity?
  */
-class Solution {
+class TwoSum {
     fun twoSum(
         nums: IntArray,
         target: Int,
