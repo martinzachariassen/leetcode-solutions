@@ -8,6 +8,12 @@
 .idea/
 *.iml
 
+# Kotlin specific
+*.class
+*.jar
+*.war
+*.ear
+
 # Build and Gradle files
 .gradle/
 build/
@@ -18,12 +24,6 @@ out/
 
 # Logs
 *.log
-
-# Kotlin specific
-*.class
-*.jar
-*.war
-*.ear
 
 # Exclude compiled files from source and tests
 **/build/
