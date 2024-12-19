@@ -35,4 +35,4 @@ jobs:
           chmod +x ./gradlew
 
           # Run tests only in the test/kotlin/easy folder
-          ./gradlew test --tests "*.easy.*" --no-daemon
+          ./gradlew test --tests "easy.*"
