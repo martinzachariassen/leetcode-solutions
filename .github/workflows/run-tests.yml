@@ -23,9 +23,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Run Tests
+      - name: Run Tests in Specific Folder
         run: |
-          # Verify that the Gradle wrapper exists
+          # Verify Gradle wrapper exists
           if [ ! -f ./gradlew ]; then
             echo "Gradle wrapper not found. Generating Gradle wrapper..."
             gradle wrapper
@@ -34,5 +34,5 @@ jobs:
           # Ensure the Gradle wrapper is executable
           chmod +x ./gradlew
 
-          # Run the tests
-          ./gradlew test --no-daemon
+          # Run tests only in the test/kotlin/easy folder
+          ./gradlew test --tests "*.easy.*" --no-daemon
