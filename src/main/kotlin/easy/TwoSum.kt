@@ -46,11 +46,28 @@ class TwoSum {
         nums: IntArray,
         target: Int,
     ): IntArray {
-        for (i in nums.indices) {
-            for (j in i + 1 until nums.size) {
-                if (nums[j] + nums[i] == target) return intArrayOf(i, j)
+        // Initialize a map to store numbers and their indices.
+        // This helps in quick lookups to find complements.
+        val map = mutableMapOf<Int, Int>()
+        val n = nums.size
+
+        for (i in 0 until n) {
+            // Calculate the complement value (target - current number).
+            val complement = target - nums[i]
+
+
+            // Check if the complement already exists in the map.
+            // If yes, return the indices of the current number and its complement.
+            if (map.containsKey(complement)) {
+                return intArrayOf(map[complement]!!, i)
             }
+
+            // Add the current number and its index to the map.
+            // This ensures it is available for future complement lookups.
+            map[nums[i]] = i
         }
-        throw IllegalArgumentException("No two sum solution")
+
+        // If no pair is found, return an empty array (no solution).
+        return intArrayOf()
     }
 }
